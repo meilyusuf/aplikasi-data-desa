@@ -12,7 +12,7 @@ import javax.persistence.OneToMany;
 
 import lombok.Data;
 
-@Entity
+/*@Entity
 @Data
 public class KK {
 	
@@ -25,3 +25,4 @@ public class KK {
 	
 
 }
+*/

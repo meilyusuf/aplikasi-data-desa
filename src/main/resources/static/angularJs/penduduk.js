@@ -1,6 +1,6 @@
-var aplikasidesa = angular.module('aplikasidesa', []);
+var app = angular.module('aplikasidesa', []);
 
-aplikasidesa.controller('PendudukController', function($http, $scope) {
+app.controller('PendudukController', function($http, $scope) {
 
     $scope.penduduk = {
         alamatDesa: null,

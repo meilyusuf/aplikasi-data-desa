@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app="aplikasidesa">
 
 <head>
 
@@ -11,23 +11,23 @@
   <title>Aplikasi Bugo - Data Penduduk</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Custom styles for this template -->
-  <link href="../css/simple-sidebar.css" rel="stylesheet">
+  <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/simple-sidebar.css" rel="stylesheet">
 
 </head>
 
-<body>
+<body >
 
   <div class="d-flex" id="wrapper">
 
     <!-- Sidebar -->
     <div class="border-right" id="sidebar-wrapper">
-      <div class="sidebar-heading">Aplikasi Bugo </div>
+     <div class="sidebar-heading">
+      	<a href="#" class="list-group-item list-group-item-action bg-primary text-white">Aplikasi Bugo</a>	
+      </div>
       <div class="list-group">
-        <a href="input-penduduk" class="list-group-item list-group-item-action bg-primary text-white">Input Data</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Shortcuts</a>
+        <a href="#!input-penduduk" class="list-group-item list-group-item-action bg-primary text-white">Input Data</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light">Data Penduduk</a>
         <a href="#" class="list-group-item list-group-item-action bg-light">Overview</a>
         <a href="#" class="list-group-item list-group-item-action bg-light">Events</a>
         <a href="#" class="list-group-item list-group-item-action bg-light">Profile</a>
@@ -41,7 +41,6 @@
 
       <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
         
-
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -69,10 +68,12 @@
         </div>
       </nav>
 
-      <div class="container-fluid">
-        <h1 class="mt-4">Simple Sidebar</h1>
-        <p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
-        <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>. The top navbar is optional, and just for demonstration. Just create an element with the <code>#menu-toggle</code> ID which will toggle the menu when clicked.</p>
+      <div class="container-fluid">      
+        <div class="container">
+        
+         	<div ng-view></div>
+         
+        </div>
       </div>
     </div>
     <!-- /#page-content-wrapper -->
@@ -81,17 +82,16 @@
   <!-- /#wrapper -->
 
   <!-- Bootstrap core JavaScript -->
-  <script src="../vendor/jquery/jquery.min.js"></script>
-  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
+  <script src="/vendor/jquery/jquery.min.js"></script>
+  <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/vendor/angularJs/angular.min.js"></script>
+  <script src="/vendor/angularJs/angular-route.min.js"></script>
+  <script src="/angularJs/penduduk.js"></script>
+  <script src="/angularJs/jquery-general.js"></script>
+  <script src="/angularJs/app.js"></script>
   <!-- Menu Toggle Script -->
-  <script>
-    $("#menu-toggle").click(function(e) {
-      e.preventDefault();
-      $("#wrapper").toggleClass("toggled");
-    });
-  </script>
-
+  
+  
 </body>
 
 </html>
