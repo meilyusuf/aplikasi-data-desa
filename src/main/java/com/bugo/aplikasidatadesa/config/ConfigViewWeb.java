@@ -10,7 +10,7 @@ public class ConfigViewWeb extends WebMvcConfigurerAdapter {
 	
 	@Override
 	public void addViewControllers(ViewControllerRegistry registry) {
-		/*registry.addViewController("/index").setViewName("/index");*/
+		/* registry.addViewController("/simbugo").setViewName("/index"); */
 		/*registry.addViewController("/input-penduduk").setViewName("pages/input-penduduk");
 		registry.addViewController("/input-penduduk").setViewName("pages/table-penduduk");*/
 	}

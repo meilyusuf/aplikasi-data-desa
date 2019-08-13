@@ -3,12 +3,12 @@ var app = angular.module("aplikasidesa", ["ngRoute","aplikasidesa.PendudukContro
 app.config(function($routeProvider) {
   
 $routeProvider
-  .when("/home", {
-    templateUrl : "pages/home.html"
+.when("/", {
+	
+    templateUrl : "partial/home.html"
   })
   .when("/input-penduduk", {
-    templateUrl : "pages/input-penduduk.html"
-    controller: 'PendudukController'
+    templateUrl : "partial/inputPenduduk/input-penduduk.html"
   });
 
 });
