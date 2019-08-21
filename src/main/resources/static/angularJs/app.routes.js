@@ -9,7 +9,9 @@ $routeProvider
   .when("/input-penduduk", {
     templateUrl : "partial/inputPenduduk/input-penduduk.html"
   })
-  
+  .when("/data-penduduk", {
+    templateUrl : "partial/datapenduduk/datapenduduk.html"
+  })
   ;
 
 });
