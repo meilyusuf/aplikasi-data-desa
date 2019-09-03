@@ -11,7 +11,6 @@
 					<th>NIK</th>
 					<th>NO.KK</th>
 					<th>NAMA</th>
-					<th>ALAMAT DUKUH</th>
 					<th>TEMPAT LAHIR</th>
 					<th>STATUS</th>
 					<th>PEKERJAAN</th>
@@ -21,11 +20,10 @@
 				<tr ng-repeat="penduduk in listPenduduk">
 					<td>{{ penduduk.noNik}}</td>
 					<td>{{ penduduk.noKK}}</td>
-					<td>{{ penduduk.nama}}</td>
-					<td>{{ penduduk.nama}}</td>
-					<td>{{ penduduk.nama}}</td>
-					<td>{{ penduduk.nama}}</td>
-					<td>{{ penduduk.nama}}</td>
+					<td>{{ penduduk.nama}}</td>					
+					<td>{{ penduduk.tanggalLahir}}</td>
+					<td>{{ penduduk.status}}</td>
+					<td>{{ penduduk.pekerjaan}}</td>
 				</tr>
 			</tbody>
 		</table>
