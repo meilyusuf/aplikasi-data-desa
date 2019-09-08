@@ -12,6 +12,10 @@ $routeProvider
   .when("/data-penduduk", {
     templateUrl : "partial/datapenduduk/datapenduduk.html"
   })
+  .when("/input-kartu-keluarga", {
+    templateUrl : "partial/kartu_keluarga/input_kartu_keluarga.html"
+  })
+  
   ;
 
 });

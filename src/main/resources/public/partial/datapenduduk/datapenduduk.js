@@ -10,6 +10,7 @@ angular.module('appDataPendudukController', []).controller('DataPendudukControll
 				method : 'GET',
 				url : '/api/penduduk/getAll'
 			}).then(function(response) { // success
+				console.log(response.data);
 				$scope.listPenduduk = response.data;
 			}, function(response) { // error
 				console.log("Error: " + response.status + " : " + response.data);

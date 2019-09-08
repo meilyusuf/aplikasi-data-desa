@@ -7,7 +7,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Starter</title>
+  <title>SIMDES  | BUGO</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
@@ -61,11 +61,11 @@ desired effect
   <header class="main-header">
 
     <!-- Logo -->
-    <a href="index.html" class="logo">
+    <a href="/" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>A</b>LT</span>
+      <span class="logo-mini"><b>SIM</b>DES</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Sistem</b>BUGO</span>
+      <span class="logo-lg"><b>SIM</b>DES</span>
     </a>
 
     <!-- Header Navbar -->
@@ -170,9 +170,20 @@ desired effect
 
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu" data-widget="tree">
-        <li class="header">HEADER</li>
+        <li class="header">DASHBOARD</li>
         <!-- Optionally, you can add icons to the links -->
-        <li class="active"><a href="#!input-penduduk"><i class="fa fa-link"></i> <span>Input Data penduduk</span></a></li>
+         <li class="active"><a href="#!input-penduduk"><i class="fa fa-link"></i> <span>Input Data penduduk</span></a></li> 
+         <li class="treeview">
+          <a href="#"><i class="fa fa-link"></i> <span>Input Data</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="#!input-kartu-keluarga">Input Kartu Keluarga</a></li>
+            <li><a href="#">Input Kelahiran</a></li>
+          </ul>
+        </li>
         <li class="treeview">
           <a href="#"><i class="fa fa-link"></i> <span>Master</span>
             <span class="pull-right-container">
@@ -180,8 +191,8 @@ desired effect
               </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#!data-penduduk">Data Penduduk</a></li>
-            <li><a href="#">Data KK</a></li>
+            <li><a href="#!data-penduduk">Data Kartu Keluarga</a></li>
+            <li><a href="#">Data Pend. Datang</a></li>
           </ul>
         </li>
       </ul>
@@ -195,8 +206,8 @@ desired effect
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Page Header
-        <small>Optional description</small>
+       SIMDES
+        <small>Sistem Informasi Manajemen Desa</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
@@ -322,6 +333,7 @@ desired effect
 <script src="angularJs/app.routes.js"></script>
 <script src="partial/inputPenduduk/penduduk.js"></script>
 <script src="partial/datapenduduk/datapenduduk.js"></script>
+<script src="partial/kartu_keluarga/input_kartu_keluarga.js"></script>
 <!-- AdminLTE App -->
 <script src="dist/js/adminlte.min.js"></script>
 
