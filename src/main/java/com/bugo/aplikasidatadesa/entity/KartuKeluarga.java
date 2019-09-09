@@ -37,7 +37,7 @@ public class KartuKeluarga {
 	@Column(name="desa")
 	private String desa;
 	
-	@Column(name="tanggal_lahir")
+	@Column(name="tanggal_keluar")
 	@Temporal(TemporalType.DATE)
 	private Date tanggalKeluar;
 	

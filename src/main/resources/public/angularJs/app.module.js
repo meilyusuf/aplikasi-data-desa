@@ -2,5 +2,6 @@ var app = angular.module("aplikasidesa",   [
                                         'appRouter',
                                         'appPendudukController',
                                         'appDataPendudukController',
-                                        'appKartuKeluargaController'
+                                        'appKartuKeluargaController',
+                                        'appInputKartuKeluargaController'
                                     ]);

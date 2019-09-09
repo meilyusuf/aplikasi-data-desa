@@ -1,6 +1,7 @@
 package com.bugo.aplikasidatadesa.service;
 
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,7 +13,7 @@ import com.bugo.aplikasidatadesa.util.ObjectMapperUtils;
 import com.bugo.aplikasidatadesa.util.PendudukUtil;
 
 @Service
-public class KartuKeluargaImpl implements KartuKeluargaService {
+public class KartuKeluargaServiceImpl implements KartuKeluargaService {
 	
 	@Autowired
 	KartuKeluargaRepository kkRepo;
@@ -24,6 +25,12 @@ public class KartuKeluargaImpl implements KartuKeluargaService {
 		kk.setCreatedDate(new Date());
 		kk.setCreatedBy("admin");
 		kkRepo.save(kk);
+	}
+
+	@Override
+	public List<KartuKeluargaDTO> getAll() {
+		List<KartuKeluarga> listKk = (List<KartuKeluarga>) kkRepo.findAll();
+		return  ObjectMapperUtils.mapAll(listKk, KartuKeluargaDTO.class);
 	}
 	
 	

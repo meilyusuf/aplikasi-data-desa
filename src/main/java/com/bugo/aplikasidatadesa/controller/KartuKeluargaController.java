@@ -1,7 +1,11 @@
 package com.bugo.aplikasidatadesa.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,8 +25,13 @@ public class KartuKeluargaController {
 	@PostMapping(value="/insertKk")
 	@ResponseStatus(HttpStatus.CREATED)
 	public void insertPenduduk(@RequestBody KartuKeluargaDTO kartukeluargaDTO) {
-		System.out.println(kartukeluargaDTO.toString());
 		kkService.insert(kartukeluargaDTO);
+	}
+	
+	@GetMapping(value="/getAll")
+	public ResponseEntity<List<KartuKeluargaDTO>> getAllKartuKeluarga() {
+		List<KartuKeluargaDTO> listKk = kkService.getAll();
+		return new ResponseEntity<>(listKk, HttpStatus.OK);
 	}
 
 }

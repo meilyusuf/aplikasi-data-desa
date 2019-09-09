@@ -13,7 +13,6 @@ public class PendudukDTO {
 	private Long noNik;
 	private Long noKK;
 	private String nama;
-	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
 	private Date tanggalLahir;
 	private String tempatLahir;
 	private String alamatDesa;

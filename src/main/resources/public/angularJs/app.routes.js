@@ -15,6 +15,9 @@ $routeProvider
   .when("/input-kartu-keluarga", {
     templateUrl : "partial/kartu_keluarga/input_kartu_keluarga.html"
   })
+   .when("/data-kartu-keluarga", {
+    templateUrl : "partial/kartu_keluarga/data_kartu_keluarga.html"
+  })
   
   ;
 

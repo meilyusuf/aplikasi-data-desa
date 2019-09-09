@@ -1,4 +1,4 @@
-angular.module('appKartuKeluargaController', []).controller('InputKkController', function($http, $scope) {
+angular.module('appInputKartuKeluargaController', []).controller('InputKartuKeluargaController', function($http, $scope) {
 
     $scope.kartuKeluarga = {
         alamatDesa: null,
