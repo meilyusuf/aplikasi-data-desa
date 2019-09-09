@@ -1,0 +1,37 @@
+<div ng-controller="DataKartuKeluargaController">
+	<div class="box">
+	<div class="box-header">
+		<h3 class="box-title">Data Kartu Keluarga</h3>
+	</div>
+	<!-- /.box-header -->
+	<div class="box-body">
+		<table id="example2" class="table table-bordered table-hover">
+			<thead>
+				<tr>
+					<th>NO.KK</th>
+					<th>NAMA KEPALA KELUARGA</th>
+					<th>ALAMAT DESA</th>
+					<th>DESA</th>
+					<th>TANGGAL KELUAR</th>
+					<th>ACTION</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="kartuKeluarga in listKartuKeluarga">
+					<td>{{ kartuKeluarga.noKk}}</td>
+					<td>{{ kartuKeluarga.namaKepalaKk}}</td>					
+					<td>{{ kartuKeluarga.alamatDesa}}</td>
+					<td>{{ kartuKeluarga.desa}}</td>
+					<td>{{ kartuKeluarga.tanggalKeluar}}</td>
+					<td>
+						<a class="btn btn-info btn-sm" href="#">Lookup</a>
+						<a class="upd btn btn-warning btn-sm" href="#">Update</a>
+						<a class="btn btn-danger btn-sm" href="#">Delete</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+</div>
+
