@@ -90,14 +90,14 @@ desired effect
             <!-- Menu Toggle Button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <!-- The user image in the navbar-->
-              <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+              <!-- <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image"> -->
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
               <span class="hidden-xs">Meilani Yusuf</span>
             </a>
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
               <li class="user-header">
-                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                <!-- <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image"> -->
 
                 <p>
                  Meilani Yusuf
@@ -221,7 +221,7 @@ desired effect
       <!--------------------------
         | Your Page Content Here |
         -------------------------->
-        <div ng-view></div>
+       <div ui-view></div>
 		
     </section>
     <!-- /.content -->
@@ -327,7 +327,8 @@ desired effect
 <script src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
 
 <script src="bower_components/angular/angular.js"></script>
-<script src="bower_components/angular-route/angular-route.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.22/angular-ui-router.js"></script>
+<script src="bower_components/angular/ui-bootstrap-tpls-0.13.4.js"></script>
 
 <script src="angularJs/app.module.js"></script>
 <script src="angularJs/app.routes.js"></script>
@@ -335,6 +336,7 @@ desired effect
 <script src="partial/datapenduduk/datapenduduk.js"></script>
 <script src="partial/kartu_keluarga/input_kartu_keluarga.js"></script>
 <script src="partial/kartu_keluarga/data_kartu_keluarga.js"></script>
+<script src="partial/kartu_keluarga/lookup_kartu_keluarga.js"></script>
 <!-- AdminLTE App -->
 <script src="dist/js/adminlte.min.js"></script>
 

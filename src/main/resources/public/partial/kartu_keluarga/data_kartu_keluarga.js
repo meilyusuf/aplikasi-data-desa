@@ -1,4 +1,5 @@
-angular.module('appKartuKeluargaController', []).controller('DataKartuKeluargaController', function($http, $scope) {
+angular.module('appKartuKeluargaController', []).controller('DataKartuKeluargaController', 
+		function($http, $scope, $location, myFactory) {
 	
 	$scope.listKartuKeluarga = [];
 	
@@ -14,5 +15,12 @@ angular.module('appKartuKeluargaController', []).controller('DataKartuKeluargaCo
 			}, function(response) { // error
 				console.log("Error: " + response.status + " : " + response.data);
 			});
-		}
+	}
+	 
+	 $scope.lookup = function(kartuKeluarga) {
+		 console.log(kartuKeluarga);
+		 myFactory.set(kartuKeluarga);
+		 $location.path("/lookup-kartu-keluarga");
+	 }
+	 
 });

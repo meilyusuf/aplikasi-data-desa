@@ -1,4 +1,4 @@
-angular.module('appInputKartuKeluargaController', []).controller('InputKartuKeluargaController', function($http, $scope) {
+angular.module('appInputKartuKeluargaController', []).controller('InputKartuKeluargaController', function($http, $scope, $window) {
 
     $scope.kartuKeluarga = {
         alamatDesa: null,
@@ -20,6 +20,7 @@ angular.module('appInputKartuKeluargaController', []).controller('InputKartuKelu
         $http.post('/api/kartuKeluarga/insertKk', $scope.kartuKeluarga).then(success, failed);
         function success(response) {
             console.log(response);
+            $window.location.reload();
         }
         function failed(response) {
             console.log(response);       
