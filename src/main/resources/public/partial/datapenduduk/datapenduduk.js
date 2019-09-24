@@ -15,5 +15,5 @@ angular.module('appDataPendudukController', []).controller('DataPendudukControll
 			}, function(response) { // error
 				console.log("Error: " + response.status + " : " + response.data);
 			});
-		}
+	}
 });

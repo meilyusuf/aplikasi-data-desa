@@ -1,3 +1,64 @@
-<div  ng-controller="LookupKartuKeluargaController">
-  <h1>testtttttt</h1>
+<div  ng-controller="LookupKartuKeluargaController as pc">
+
+	<div class="col-md-12">
+		<div class="box box-info">
+			<div class="box-header with-border">
+				<h4 align="center">KARTU KELUARGA</h4>
+				<h5 align="center"><u>{{KartuKeluarga.noKk}}</u></h5>
+			</div>
+			<div class="box-body">
+				<div class="row">
+				  <div class="col-sm-6">
+				  	<form class="form-horizontal">
+						<div class="box-body">			
+							<div class="form-group">
+								<label class="control-label col-sm-3" for="pwd">Nama Kepala KK:</label>
+								<div class="col-sm-9">
+									<input ng-model="KartuKeluarga.namaKepalaKk" type="text" class="form-control" disabled="true">
+								</div>
+							</div>
+						  </div>				 
+					</div>
+					 <div class="col-sm-6">
+						<div class="box-body">			
+							<div class="form-group">
+								<label class="control-label col-sm-3" for="pwd">Alamat:</label>
+								<div class="col-sm-9">
+									<input ng-model="KartuKeluarga.alamatDesa" type="text" class="form-control" disabled="true">
+								</div>
+							</div>
+						  </div>				 
+					</div>
+				 	 </div>
+				 	 <div class="box-footer">
+						 <button type="button" class="btn btn-default" ng-click="pc.open('lg')">Large modal</button>
+					</div>
+			</div>
+			<table id="example2" class="table table-bordered table-hover">
+			<thead>
+				<tr>
+					<th>NIK</th>
+					<th>NO.KK</th>
+					<th>NAMA</th>
+					<th>TEMPAT LAHIR</th>
+					<th>STATUS</th>
+					<th>PEKERJAAN</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- <tr ng-repeat="penduduk in listPenduduk">
+					<td>{{ penduduk.noNik}}</td>
+					<td>{{ penduduk.noKK}}</td>
+					<td>{{ penduduk.nama}}</td>					
+					<td>{{ penduduk.tanggalLahir}}</td>
+					<td>{{ penduduk.status}}</td>
+					<td>{{ penduduk.pekerjaan}}</td>
+				</tr> -->
+			</tbody>
+		</table>		 
+		</div>
+	</div>
+	
+
+
 </div>

@@ -36,9 +36,6 @@ public class Penduduk {
 	@Column(name="tempat_lahir")
 	private String tempatLahir;
 	
-	@Column(name="alamat_desa")
-	private String alamatDesa;
-	
 	@Column(name="status")
 	private String status;
 	

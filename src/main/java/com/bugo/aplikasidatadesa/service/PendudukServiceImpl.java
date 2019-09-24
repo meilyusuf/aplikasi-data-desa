@@ -24,7 +24,6 @@ public class PendudukServiceImpl implements PendudukService {
 	@Override
 	public void insert(PendudukDTO pendudukDTO) {
 		Penduduk pendudukEntity  = ObjectMapperUtils.map(pendudukDTO, Penduduk.class);
-		pendudukEntity.setAlamatDesa(PendudukUtil.getAlamatDesaDesc(pendudukDTO.getAlamatDesa()));
 		pendudukEntity.setCreatedBy("admin");
 		pendudukEntity.setCreatedDate(new Date());
 		pendudukRepository.save(pendudukEntity);				
