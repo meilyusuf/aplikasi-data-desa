@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bugo.aplikasidatadesa.dto.KartuKeluargaDTO;
+import com.bugo.aplikasidatadesa.entity.KartuKeluarga;
 import com.bugo.aplikasidatadesa.service.KartuKeluargaService;
 
 @RestController

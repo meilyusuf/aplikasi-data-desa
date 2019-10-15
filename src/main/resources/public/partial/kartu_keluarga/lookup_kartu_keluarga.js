@@ -2,8 +2,11 @@ var app = angular.module('appLookupKartuKeluargaController', ['ui.router', 'ngAn
 
 app.controller('LookupKartuKeluargaController', function($http, $scope, $location, myFactory,  $uibModal) {
 	
-	$scope.KartuKeluarga = myFactory.get();
-	console.log($scope.KartuKeluarga);
+	$scope.kartuKeluarga = myFactory.get();
+	console.log($scope.kartuKeluarga);	
+	//$scope.anggotaKk = kartuKeluarga.anggotaKk;
+
+	
 	
 	 var pc = this;
 	  pc.data = "Lorem Name Test"; 
@@ -19,7 +22,7 @@ app.controller('LookupKartuKeluargaController', function($http, $scope, $locatio
 	      size: size,
 	      resolve: {
 	        data: function () {
-	          return pc.data;
+	          return pc.kartuKeluarga;
 	        }
 	      }
 	    });
@@ -37,10 +40,19 @@ app.controller('LookupKartuKeluargaController', function($http, $scope, $locatio
 
 app.controller('ModalInstanceCtrl', function ($uibModalInstance, data) {
 	  var pc = this;
-	  pc.data = data;
+	  pc.kartuKeluarga = data;
 	  
-	  pc.ok = function () {
-	    //{...}
+	  pc.ok = function () {    	  
+	    $scope.anggotaKk.kartuKeluarga =  pc.kartuKeluarga;
+	    console.log($scope.anggotaKk);
+	    $http.post('api/penduduk/insert', $scope.kartuKeluarga).then(success, failed);
+	     	function success(response) {
+	            console.log(response);
+	        }
+	        function failed(response) {
+	            console.log(response);       
+	        }
+	     
 	   
 	    $uibModalInstance.close();
 	  };

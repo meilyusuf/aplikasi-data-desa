@@ -4,34 +4,47 @@
 		<div class="box box-info">
 			<div class="box-header with-border">
 				<h4 align="center">KARTU KELUARGA</h4>
-				<h5 align="center"><u>{{KartuKeluarga.noKk}}</u></h5>
 			</div>
 			<div class="box-body">
 				<div class="row">
-				  <div class="col-sm-6">
-				  	<form class="form-horizontal">
-						<div class="box-body">			
+				<form class="form-horizontal">
+				  <div class="col-sm-6">				  	
+						<div class="box-body">
 							<div class="form-group">
-								<label class="control-label col-sm-3" for="pwd">Nama Kepala KK:</label>
+								<label class="control-label col-sm-3">No. KK:</label>
 								<div class="col-sm-9">
-									<input ng-model="KartuKeluarga.namaKepalaKk" type="text" class="form-control" disabled="true">
+									<input ng-model="kartuKeluarga.noKk" type="text" class="form-control" disabled="true">
+								</div>
+							</div>			
+							<div class="form-group">
+								<label class="control-label col-sm-3" >Nama Kepala KK:</label>
+								<div class="col-sm-9">
+									<input ng-model="kartuKeluarga.namaKepalaKk" type="text" class="form-control" disabled="true">
 								</div>
 							</div>
 						  </div>				 
 					</div>
 					 <div class="col-sm-6">
-						<div class="box-body">			
-							<div class="form-group">
-								<label class="control-label col-sm-3" for="pwd">Alamat:</label>
-								<div class="col-sm-9">
-									<input ng-model="KartuKeluarga.alamatDesa" type="text" class="form-control" disabled="true">
+						 <form class="form-horizontal">
+							<div class="box-body">			
+								<div class="form-group">
+									<label class="control-label col-sm-3" >Alamat:</label>
+									<div class="col-sm-9">
+										<input ng-model="kartuKeluarga.alamatDesa" type="text" class="form-control" disabled="true">
+									</div>
 								</div>
-							</div>
-						  </div>				 
-					</div>
+								<div class="form-group">
+									<label class="control-label col-sm-3">Desa:</label>
+									<div class="col-sm-9">
+										<input ng-model="kartuKeluarga.desa" type="text" class="form-control" disabled="true">
+									</div>
+								</div>
+							  </div>									 
+						</div>
+						
 				 	 </div>
 				 	 <div class="box-footer">
-						 <button type="button" class="btn btn-default" ng-click="pc.open('lg')">Large modal</button>
+						 <button type="button" class="btn btn-info" ng-click="pc.open('lg')">Tambah Anggota keluarga</button>
 					</div>
 			</div>
 			<table id="example2" class="table table-bordered table-hover">
@@ -43,17 +56,22 @@
 					<th>TEMPAT LAHIR</th>
 					<th>STATUS</th>
 					<th>PEKERJAAN</th>
+					<th>ACTION</th>
 				</tr>
 			</thead>
 			<tbody>
-				<!-- <tr ng-repeat="penduduk in listPenduduk">
-					<td>{{ penduduk.noNik}}</td>
-					<td>{{ penduduk.noKK}}</td>
-					<td>{{ penduduk.nama}}</td>					
-					<td>{{ penduduk.tanggalLahir}}</td>
-					<td>{{ penduduk.status}}</td>
-					<td>{{ penduduk.pekerjaan}}</td>
-				</tr> -->
+				 <tr ng-repeat="anggota in kartuKeluarga.anggotaKk">
+					<td>{{ anggota.noNik}}</td>
+					<td>{{ anggota.noKK}}</td>
+					<td>{{ anggota.nama}}</td>					
+					<td>{{ anggota.tanggalLahir}}</td>
+					<td>{{ anggota.status}}</td>
+					<td>{{ anggota.pekerjaan}}</td>
+					<td>
+						<a class="upd btn btn-warning btn-sm" href="#">Update</a>
+						<a class="btn btn-danger btn-sm" href="#">Delete</a>
+					</td>
+				</tr> 
 			</tbody>
 		</table>		 
 		</div>

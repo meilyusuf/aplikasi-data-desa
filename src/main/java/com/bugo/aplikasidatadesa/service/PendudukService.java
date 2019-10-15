@@ -9,6 +9,6 @@ public interface PendudukService {
 	
 	public void insert(PendudukDTO penduduk);
 	
-	public List<Penduduk> getAll();
+	public List<PendudukDTO> getAll();
 
 }

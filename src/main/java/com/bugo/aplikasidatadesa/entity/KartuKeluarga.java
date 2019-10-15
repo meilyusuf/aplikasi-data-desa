@@ -1,8 +1,8 @@
 package com.bugo.aplikasidatadesa.entity;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -40,15 +40,16 @@ public class KartuKeluarga {
 	@Column(name="tanggal_keluar")
 	@Temporal(TemporalType.DATE)
 	private Date tanggalKeluar;
-	
-	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy ="kartuKeluarga") 
-	private List<Penduduk> anggotaKk = new ArrayList<>();
-	
+		
+	 @OneToMany(mappedBy="kartuKeluarga") 
+	 private List<Penduduk> anggotaKk;
+	 	
 	@Column(name="created_date")
 	@Temporal(TemporalType.DATE)
 	private Date createdDate;
 	
 	@Column(name="created_by")
 	private String createdBy;
-	 
+
+	
 }

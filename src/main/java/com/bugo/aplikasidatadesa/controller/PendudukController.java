@@ -32,8 +32,8 @@ public class PendudukController {
 	}
 	
 	@GetMapping(value="/getAll")
-	public ResponseEntity<List<Penduduk>> getAllpenduduk() {
-		List<Penduduk> listPenduduk = pendudukService.getAll();
+	public ResponseEntity<List<PendudukDTO>> getAllpenduduk() {
+		List<PendudukDTO> listPenduduk = pendudukService.getAll();
 		return new ResponseEntity<>(listPenduduk, HttpStatus.OK);
 	}
 

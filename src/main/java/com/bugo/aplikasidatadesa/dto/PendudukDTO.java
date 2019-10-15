@@ -1,22 +1,26 @@
 package com.bugo.aplikasidatadesa.dto;
 
+import java.io.Serializable;
 import java.util.Date;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Data;
 
 @Data
-public class PendudukDTO {
-	
+public class PendudukDTO implements Serializable {
+
+	private static final long serialVersionUID = 7804656700622538877L;
 	private Long id;
 	private Long noNik;
-	private KartuKeluargaDTO noKK;
+	@JsonIgnore
+	private KartuKeluargaDTO kartuKeluarga;
 	private String nama;
 	private Date tanggalLahir;
 	private String tempatLahir;
 	private String status;
 	private String pekerjaan;
+	private String kkId;
 	
 
 }

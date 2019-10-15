@@ -8,6 +8,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.bugo.aplikasidatadesa.dto.KartuKeluargaDTO;
 import com.bugo.aplikasidatadesa.dto.PendudukDTO;
 import com.bugo.aplikasidatadesa.dto.type.AlamatDesa;
 import com.bugo.aplikasidatadesa.entity.Penduduk;
@@ -30,8 +31,9 @@ public class PendudukServiceImpl implements PendudukService {
 	}
 
 	@Override
-	public List<Penduduk> getAll() {
-		return (List<Penduduk>) pendudukRepository.findAll();		
+	public List<PendudukDTO> getAll() {
+		List<Penduduk> penduduk = (List<Penduduk>) pendudukRepository.findAll();
+		return 	ObjectMapperUtils.mapAll(penduduk, PendudukDTO.class);	
 	}
 	
 	
