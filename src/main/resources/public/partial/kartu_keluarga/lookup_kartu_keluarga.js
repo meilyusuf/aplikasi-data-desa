@@ -49,7 +49,7 @@ app.controller('ModalInstanceCtrl', function ($http, $scope, $location, $uibModa
 	    $http.post('api/penduduk/insert', $scope.anggotaKk).then(success, failed);
 	     	function success(response) {
 	            console.log(response);
-	            $location.path("/data-penduduk");
+	            $location.path("/data-kartu-keluarga");
 	        }
 	        function failed(response) {
 	            console.log(response);       
