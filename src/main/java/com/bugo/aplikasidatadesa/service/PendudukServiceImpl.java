@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import com.bugo.aplikasidatadesa.dto.KartuKeluargaDTO;
 import com.bugo.aplikasidatadesa.dto.PendudukDTO;
 import com.bugo.aplikasidatadesa.dto.type.AlamatDesa;
+import com.bugo.aplikasidatadesa.entity.KartuKeluarga;
 import com.bugo.aplikasidatadesa.entity.Penduduk;
 import com.bugo.aplikasidatadesa.repository.PendudukRepository;
 import com.bugo.aplikasidatadesa.util.ObjectMapperUtils;
@@ -25,6 +26,7 @@ public class PendudukServiceImpl implements PendudukService {
 	@Override
 	public void insert(PendudukDTO pendudukDTO) {
 		Penduduk pendudukEntity  = ObjectMapperUtils.map(pendudukDTO, Penduduk.class);
+		pendudukEntity.setKartuKeluarga(new KartuKeluarga(pendudukDTO.getKkId()));
 		pendudukEntity.setCreatedBy("admin");
 		pendudukEntity.setCreatedDate(new Date());
 		pendudukRepository.save(pendudukEntity);				

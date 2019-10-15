@@ -22,7 +22,7 @@ app.controller('LookupKartuKeluargaController', function($http, $scope, $locatio
 	      size: size,
 	      resolve: {
 	        data: function () {
-	          return pc.kartuKeluarga;
+	          return $scope.kartuKeluarga;
 	        }
 	      }
 	    });
@@ -38,16 +38,18 @@ app.controller('LookupKartuKeluargaController', function($http, $scope, $locatio
 	 
 });
 
-app.controller('ModalInstanceCtrl', function ($uibModalInstance, data) {
+app.controller('ModalInstanceCtrl', function ($http, $scope, $location, $uibModalInstance, data) {
 	  var pc = this;
-	  pc.kartuKeluarga = data;
-	  
+	  console.log(data);
+	  $scope.anggotaKk = {
+			  kkId:data.kkId
+	  };
 	  pc.ok = function () {    	  
-	    $scope.anggotaKk.kartuKeluarga =  pc.kartuKeluarga;
 	    console.log($scope.anggotaKk);
-	    $http.post('api/penduduk/insert', $scope.kartuKeluarga).then(success, failed);
+	    $http.post('api/penduduk/insert', $scope.anggotaKk).then(success, failed);
 	     	function success(response) {
 	            console.log(response);
+	            $location.path("/data-penduduk");
 	        }
 	        function failed(response) {
 	            console.log(response);       

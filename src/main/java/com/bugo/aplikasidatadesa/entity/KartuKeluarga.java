@@ -14,10 +14,14 @@ import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class KartuKeluarga {
 	
 	@Id
@@ -51,5 +55,8 @@ public class KartuKeluarga {
 	@Column(name="created_by")
 	private String createdBy;
 
+	public KartuKeluarga(Long kkId) {
+		this.kkId = kkId;
+	}
 	
 }

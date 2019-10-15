@@ -16,16 +16,16 @@ angular.module('appInputKartuKeluargaController', []).controller('InputKartuKelu
        };
 
        $scope.simpanKartuKeluarga = function() {
-    	   console.log($scope.kartuKeluarga);
-        $http.post('/api/kartuKeluarga/insertKk', $scope.kartuKeluarga).then(success, failed);
-        function success(response) {
-            console.log(response);
-            $window.location.reload();
-        }
-        function failed(response) {
-            console.log(response);       
-        }
-    }
+	    	   console.log($scope.kartuKeluarga);
+	        $http.post('/api/kartuKeluarga/insertKk', $scope.kartuKeluarga).then(success, failed);
+	        function success(response) {
+	            console.log(response);
+	            $window.location.reload();
+	        }
+	        function failed(response) {
+	            console.log(response);       
+	        }
+       }
       
 
 
