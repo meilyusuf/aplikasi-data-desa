@@ -3,14 +3,8 @@ var app = angular.module('appLookupKartuKeluargaController', ['ui.router', 'ngAn
 app.controller('LookupKartuKeluargaController', function($http, $scope, $location, myFactory,  $uibModal) {
 	
 	$scope.kartuKeluarga = myFactory.get();
-	console.log($scope.kartuKeluarga);	
-	//$scope.anggotaKk = kartuKeluarga.anggotaKk;
-
-	
-	
-	 var pc = this;
-	  pc.data = "Lorem Name Test"; 
-
+	console.log($scope.kartuKeluarga);		
+	 var pc = this;	 
 	  pc.open = function (size) {
 	    var modalInstance = $uibModal.open({
 	      animation: true,
@@ -27,13 +21,26 @@ app.controller('LookupKartuKeluargaController', function($http, $scope, $locatio
 	      }
 	    });
 
-	    modalInstance.result.then(function () {
-	     
+	    modalInstance.result.then(function (result) {
+	    	$scope.kartuKeluarga.anggotaKk.push(result);
 	    },function rejection(error) {
 	        return error;
 	    });
 	    
 	  };
+	  pc.deleteAnggotaKk = function(anggota, i) {
+		console.log(anggota);
+		$http.get('api/penduduk/'+anggota.id).then(success, failed);
+	     	function success(response) {
+	            console.log(response);
+	            $scope.kartuKeluarga.anggotaKk.splice(i, 1);
+	        }
+	        function failed(response) {
+	            console.log(response);       
+	        }
+	  	};
+	  	
+	 }
 	
 	 
 });
@@ -49,14 +56,15 @@ app.controller('ModalInstanceCtrl', function ($http, $scope, $location, $uibModa
 	    $http.post('api/penduduk/insert', $scope.anggotaKk).then(success, failed);
 	     	function success(response) {
 	            console.log(response);
-	            $location.path("/data-kartu-keluarga");
+	            
+	            //$location.path("/data-kartu-keluarga");
 	        }
 	        function failed(response) {
 	            console.log(response);       
 	        }
 	     
 	   
-	    $uibModalInstance.close();
+	    $uibModalInstance.close($scope.anggotaKk);
 	  };
 
 	  pc.cancel = function () {
