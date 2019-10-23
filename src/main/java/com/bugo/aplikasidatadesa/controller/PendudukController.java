@@ -40,7 +40,7 @@ public class PendudukController {
 	
 	@GetMapping(value="/delete/{id}")
 	public void deletePendudukById(@PathVariable Integer id) {
-	   
+	  pendudukService.deleteById(id);
 	}
 
 }

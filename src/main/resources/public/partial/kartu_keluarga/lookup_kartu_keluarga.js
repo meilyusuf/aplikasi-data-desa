@@ -4,8 +4,25 @@ app.controller('LookupKartuKeluargaController', function($http, $scope, $locatio
 	
 	$scope.kartuKeluarga = myFactory.get();
 	console.log($scope.kartuKeluarga);		
-	 var pc = this;	 
-	  pc.open = function (size) {
+	 var pc = this;
+	  pc.open = function (size, anggota) {
+		  if(anggota != 0) {
+			  var anggotaKk = {
+					  	kkId: $scope.kartuKeluarga.kkId,		       			
+		       			nama: anggota.nama,
+		       			id: anggota.id,
+		       			noNik: anggota.noNik,
+		       			pekerjaan: anggota.pekerjaan,
+		       			status: anggota.status,
+		       			tanggalLahir: anggota.tanggalLahir,
+		       			tempatLahir: anggota.tempatLahir
+		       			};
+		  } else {
+			  var anggotaKk = {
+					  	kkId: $scope.kartuKeluarga.kkId,		       			
+		       			};
+		  }
+		  
 	    var modalInstance = $uibModal.open({
 	      animation: true,
 	      ariaLabelledBy: 'modal-title',
@@ -15,8 +32,8 @@ app.controller('LookupKartuKeluargaController', function($http, $scope, $locatio
 	      controllerAs: 'pc',
 	      size: size,
 	      resolve: {
-	        data: function () {
-	          return $scope.kartuKeluarga;
+	        data: function () {	        	
+	        	return anggotaKk; 	        	
 	        }
 	      }
 	    });
@@ -28,9 +45,10 @@ app.controller('LookupKartuKeluargaController', function($http, $scope, $locatio
 	    });
 	    
 	  };
+	  
 	  pc.deleteAnggotaKk = function(anggota, i) {
 		console.log(anggota);
-		$http.get('api/penduduk/'+anggota.id).then(success, failed);
+		$http.get('api/penduduk/delete/'+anggota.id).then(success, failed);
 	     	function success(response) {
 	            console.log(response);
 	            $scope.kartuKeluarga.anggotaKk.splice(i, 1);
@@ -38,32 +56,35 @@ app.controller('LookupKartuKeluargaController', function($http, $scope, $locatio
 	        function failed(response) {
 	            console.log(response);       
 	        }
-	  	};
+	  };
 	  	
-	 }
+	 
 	
 	 
 });
 
 app.controller('ModalInstanceCtrl', function ($http, $scope, $location, $uibModalInstance, data) {
 	  var pc = this;
-	  console.log(data);
-	  $scope.anggotaKk = {
-			  kkId:data.kkId
-	  };
+		  $scope.anggotaKk = {
+				  	kkId: data.kkId,
+				  	nama: data.nama,
+	       			id: data.id,
+	       			noNik: data.noNik,
+	       			pekerjaan: data.pekerjaan,
+	       			status: data.status,
+	       			tanggalLahir: data.tanggalLahir,
+	       			tempatLahir: data.tempatLahir
+		  };	  
+	  	  
 	  pc.ok = function () {    	  
 	    console.log($scope.anggotaKk);
 	    $http.post('api/penduduk/insert', $scope.anggotaKk).then(success, failed);
 	     	function success(response) {
-	            console.log(response);
-	            
-	            //$location.path("/data-kartu-keluarga");
+	            console.log(response);	            	           
 	        }
 	        function failed(response) {
 	            console.log(response);       
-	        }
-	     
-	   
+	        }	     	   
 	    $uibModalInstance.close($scope.anggotaKk);
 	  };
 

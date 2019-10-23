@@ -37,6 +37,11 @@ public class PendudukServiceImpl implements PendudukService {
 		List<Penduduk> penduduk = (List<Penduduk>) pendudukRepository.findAll();
 		return 	ObjectMapperUtils.mapAll(penduduk, PendudukDTO.class);	
 	}
+
+  @Override
+  public void deleteById(Integer id) {    
+    pendudukRepository.deleteById(Long.valueOf(id));    
+  }
 	
 	
 

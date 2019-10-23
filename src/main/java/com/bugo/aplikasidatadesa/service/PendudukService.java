@@ -10,5 +10,7 @@ public interface PendudukService {
 	public void insert(PendudukDTO penduduk);
 	
 	public List<PendudukDTO> getAll();
+	
+	public void deleteById(Integer id);
 
 }
