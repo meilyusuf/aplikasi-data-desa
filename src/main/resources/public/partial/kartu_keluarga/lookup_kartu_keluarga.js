@@ -39,6 +39,9 @@ app.controller('LookupKartuKeluargaController', function($http, $scope, $locatio
 	    });
 
 	    modalInstance.result.then(function (result) {
+	    	if($scope.kartuKeluarga.anggotaKk.find(x => x.id === result.id)) {
+	    		$scope.kartuKeluarga.anggotaKk.splice(getAnggotaKkById(result.id), 1);
+	    	}	    	
 	    	$scope.kartuKeluarga.anggotaKk.push(result);
 	    },function rejection(error) {
 	        return error;
@@ -58,7 +61,10 @@ app.controller('LookupKartuKeluargaController', function($http, $scope, $locatio
 	        }
 	  };
 	  	
-	 
+	  function getAnggotaKkById(id){
+		  return $scope.kartuKeluarga.anggotaKk.filter(x => x.id === id);
+	  }
+
 	
 	 
 });
