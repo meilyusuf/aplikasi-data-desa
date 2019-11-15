@@ -7,5 +7,7 @@ var app = angular.module("aplikasidesa",   [
                                         'appDataPendudukController',
                                         'appKartuKeluargaController',
                                         'appInputKartuKeluargaController',
-                                        'appLookupKartuKeluargaController'
+                                        'appLookupKartuKeluargaController',
+                                        'KelahiranModule'
                                     ]);
+

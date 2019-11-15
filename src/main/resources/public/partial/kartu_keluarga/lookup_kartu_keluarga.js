@@ -6,8 +6,9 @@ app.controller('LookupKartuKeluargaController', function($http, $scope, $locatio
 	console.log($scope.kartuKeluarga);		
 	 var pc = this;
 	  pc.open = function (size, anggota) {
+		  var anggotaKk = {};
 		  if(anggota != 0) {
-			  var anggotaKk = {
+			 anggotaKk = {
 					  	kkId: $scope.kartuKeluarga.kkId,		       			
 		       			nama: anggota.nama,
 		       			id: anggota.id,
@@ -18,7 +19,7 @@ app.controller('LookupKartuKeluargaController', function($http, $scope, $locatio
 		       			tempatLahir: anggota.tempatLahir
 		       			};
 		  } else {
-			  var anggotaKk = {
+			 anggotaKk = {
 					  	kkId: $scope.kartuKeluarga.kkId,		       			
 		       			};
 		  }
